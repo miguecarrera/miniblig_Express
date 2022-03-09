@@ -1,0 +1,22 @@
+<div>
+    <section>
+        <article *ngFor="let post of posts">
+            <h2>{{post.title}}</h2>
+            <p>{{post.description}}</p>
+            <span id="yo">{{post.creationdate}}</span>
+            <button *ngIf="isLoggedIn" (click)="editItem(post._id)">Editar</button>
+            <button *ngIf="isLoggedIn" (click)="deleteItem(post._id)">Borrar</button>
+        </article>
+
+        <form *ngIf="isLoggedIn" #f="ngForm" (ngSubmit)="onSubmit(f)">
+            Título <br>
+            <input type="text" name="title" id="title" ngModel required #title="ngModel"> <br>
+            Cuerpo <br>
+            <textarea name="content" id="content" rows="5" cols="30" ngModel required #content="ngModel"></textarea> <br> <br>
+            <input type="submit" value="Crear nuevo post">
+        </form>
+    </section>
+    <aside>
+        <app-login></app-login>
+    </aside>
+</div>

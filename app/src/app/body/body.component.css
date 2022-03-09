@@ -1,0 +1,27 @@
+div{
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    margin: 10px;
+}
+
+
+article{
+    border: 2px solid gray;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+article > h2{
+    text-transform: uppercase;
+}
+
+article > p{
+    font-size: 1.1rem;
+    padding-left: 10px;
+}
+
+#yo{
+display: flex;
+justify-content: end;
+}
